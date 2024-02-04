@@ -1,0 +1,74 @@
+{% import 'macros/form_errors.j2' as form_errors %}
+
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="header">
+        St. Valentin
+    </div>
+    {% if form.errors %}
+    <div class="form-errors">
+        ⚠️{{ form_errors.display_first_value(form.errors) }}
+    </div>
+    {% endif %}
+    <form method="post">
+        {{ form.hidden_tag() }}
+
+        <h3>Décris toi d'abord :</h3>
+
+        {{ form.prenom.label }}
+        {{ form.prenom(placeholder="") }}
+
+        {{ form.nom.label }}
+        {{ form.nom(placeholder="") }}
+
+        {{ form.classe.label }}
+        {{ form.classe }}
+
+        {{ form.self_1.label }}
+        {{ form.self_1 }}
+
+        {{ form.self_2.label }}
+        {{ form.self_2 }}
+
+        {{ form.self_3.label }}
+        {{ form.self_3 }}
+
+        {{ form.self_4.label }}
+        {{ form.self_4 }}
+
+        {{ form.self_5.label }}
+        {{ form.self_5 }}
+
+        {{ form.self_6.label }}
+        {{ form.self_6 }}
+
+        <h3>Puis décris la personne recherchée :</h3>
+
+        {{ form.other_1.label }}
+        {{ form.other_1 }}
+
+        {{ form.other_2.label }}
+        {{ form.other_2 }}
+
+        {{ form.other_3.label }}
+        {{ form.other_3 }}
+
+        {{ form.other_4.label }}
+        {{ form.other_4 }}
+
+        {{ form.other_5.label }}
+        {{ form.other_5 }}
+
+        {{ form.other_6.label }}
+        {{ form.other_6 }}
+
+        {{ form.submit(placeholder="") }}
+    </form>
+    <div class="footer">
+        <div>
+            Ce test de compatibilité ne garantit pas le succès d'une relation. La compatibilité réelle dépend de nombreux facteurs. Prendre le résultat avec humour et légèreté !
+        </div>
+    </div>
+    <div class="logo">^~^</div>
+{% endblock %}
